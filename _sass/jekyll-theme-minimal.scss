@@ -235,14 +235,6 @@ hr {
   margin:0 0 20px;
 }
 
-footer {
-  width:270px;
-  float:left;
-  position:fixed;
-  bottom:50px;
-  -webkit-font-smoothing:subpixel-antialiased;
-}
-
 @media print, screen and (min-width: 650px) {
   .itch-wide {display:block;}
   .itch-narrow {display:none;}
@@ -260,10 +252,11 @@ footer {
     margin-right: auto;
   }
 
-  header, section, footer {
+  header, section {
     float:none;
     display:block;
-    width:400px;
+    width:auto;
+    max-width:400px;
     position:static;
     text-align:center;
     margin-left: auto;
@@ -272,7 +265,7 @@ footer {
   }
 
   section {
-    width:560px;
+    max-width:560px;
     padding:0;
     margin-left: auto;
     margin-right: auto;
@@ -298,10 +291,10 @@ footer {
 
 @media print, screen and (max-width: 650px) {
   body {
-    padding:15px;
+    padding:0;
   }
+  header section {width:auto;}
   section {
-    width:360px;
     margin-top: 10px;
   }
 
