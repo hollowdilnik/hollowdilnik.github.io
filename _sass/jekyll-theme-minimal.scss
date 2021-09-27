@@ -266,10 +266,16 @@ hr {
 
   section {
     max-width:560px;
-    padding:0;
+    padding:10px;
     margin-left: auto;
     margin-right: auto;
     margin-top: 10px;
+    text-align:left;
+  }
+  
+  section.games {
+    padding:0;
+    text-align:center;
   }
 
   header a small {
