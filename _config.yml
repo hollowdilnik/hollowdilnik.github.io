@@ -17,9 +17,9 @@
 # in the templates via {{ site.myvariable }}.
 
 title: Hollowdilnik
-email: hollowdilnik@gmail.com
+# email: hollowdilnik@gmail.com
 description: >- # this means to ignore newlines until "baseurl:"
-  We are Dmitry Molchanov and Julia Molchanova. We make VR games focused on intense locomotion. 
+  VR games
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "" # the base hostname & protocol for your site, e.g. http://example.com
 # twitter_username: jekyllrb
