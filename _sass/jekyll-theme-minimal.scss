@@ -155,6 +155,11 @@ img {
   margin-bottom: 10px;
   width:270px;
   height:270px;
+  content: "";
+  display: inline-block;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-image: url(../img/logo.png);
 }
 
 kbd {
@@ -174,7 +179,7 @@ kbd {
 header {
   width:270px;
   float:left;
-  position:fixed;
+  position:static;
   -webkit-font-smoothing:subpixel-antialiased;
 }
 
@@ -238,11 +243,15 @@ hr {
 @media print, screen and (min-width: 650px) {
   .itch-wide {display:block;}
   .itch-narrow {display:none;}
+  #footer-privacy {display: none;}
+  #sidebar-privacy {display: block;}
 }
 
 @media print, screen and (max-width: 650px) {
   .itch-wide {display:none;}
   .itch-narrow {display:block;}
+  #footer-privacy {display: block;}
+  #sidebar-privacy {display: none;}
 }
 
 @media print, screen and (max-width: 950px) {
