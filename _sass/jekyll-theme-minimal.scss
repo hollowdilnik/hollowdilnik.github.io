@@ -240,21 +240,23 @@ hr {
   margin:0 0 20px;
 }
 
+#footer-privacy {display: none;}
+#sidebar-privacy {display: block;}
+
 @media print, screen and (min-width: 650px) {
   .itch-wide {display:block;}
   .itch-narrow {display:none;}
-  #footer-privacy {display: none;}
-  #sidebar-privacy {display: block;}
 }
 
 @media print, screen and (max-width: 650px) {
   .itch-wide {display:none;}
   .itch-narrow {display:block;}
-  #footer-privacy {display: block;}
-  #sidebar-privacy {display: none;}
 }
 
 @media print, screen and (max-width: 950px) {
+  #footer-privacy {display: block;}
+  #sidebar-privacy {display: none;}
+
   div.wrapper {
     width:auto;
     margin-left: auto;
