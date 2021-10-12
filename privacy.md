@@ -16,3 +16,6 @@ However, we do use the following third-party services that may collect and share
 - itch.io (applicable to our apps obtained through itch.io)  
 [https://itch.io/docs/legal/privacy-policy](https://itch.io/docs/legal/privacy-policy)
 
+- Google Analytics (applicable to the visitors of this website)  
+[http://www.google.com/policies/privacy/partners/](http://www.google.com/policies/privacy/partners/)
+
