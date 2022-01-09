@@ -336,12 +336,12 @@ hr {
 #footer-privacy {display: none;}
 #sidebar-privacy {display: block;}
 
-@media print, screen and (min-width: 650px) {
+@media print, screen and (min-width: 750px) {
   .itch-wide {display:block;}
   .itch-narrow {display:none;}
 }
 
-@media print, screen and (max-width: 650px) {
+@media print, screen and (max-width: 750px) {
   .itch-wide {display:none;}
   .itch-narrow {display:block;}
 }
@@ -373,7 +373,7 @@ hr {
   }
 
   section {
-    max-width:560px;
+    max-width:400px;
     padding:10px;
     margin-left: auto;
     margin-right: auto;
