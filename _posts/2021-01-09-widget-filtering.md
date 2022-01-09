@@ -35,7 +35,7 @@ Further, you can expose these parameters to blueprints, making the original `UWi
 Exposing `RenderTarget->LODGroup` is also a good idea in case you want to setup filtering in texture groups instead.
 
 Changing these parameters in a different place (or during the object lifetime) is messy.
-With the current implementation of render targets, the number of mips is not updated after changing `bAutoGenerateMips`, so you'd need to either recreate its `Resource` or to create a new render target object.
+With the current implementation of render targets, the number of mips is not updated after changing `bAutoGenerateMips`, so you'd need to create a new render target object.
 You would also need to update the `SlateUI` parameter of the material instance if you change the render target.
 
 Simply setting `bAutoGenerateMips = true` is not enough!
@@ -49,8 +49,8 @@ We just need to call `UpdateResourceImmediate` here in order to regenerate mips:
 void UVRWidgetComponent::DrawWidgetToRenderTarget(float DeltaTime)
 {
 	Super::DrawWidgetToRenderTarget(DeltaTime);
-
-	if (RenderTarget)
+	
+	if (RenderTarget && RenderTarget->bAutoGenerateMips)
 	{
 		RenderTarget->UpdateResourceImmediate(false);
 	}
