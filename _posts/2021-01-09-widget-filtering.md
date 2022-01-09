@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Fixing aliasing / flickering widgets in UE4 VR"
+title: "Fixing aliasing / flickering widgets in UE4"
 ---
 > TL;DR:
 
@@ -46,7 +46,7 @@ The widget is drawn to the render target inside the `UWidgetComponent::DrawWidge
 We just need to call `UpdateResourceImmediate` here in order to regenerate mips:
 
 ```cpp
-void UVRWidgetComponent::DrawWidgetToRenderTarget(float DeltaTime)
+void UFilteredWidgetComponent::DrawWidgetToRenderTarget(float DeltaTime)
 {
 	Super::DrawWidgetToRenderTarget(DeltaTime);
 	
@@ -66,7 +66,7 @@ Finally, make sure to add `"Slate"` to the `PublicDependencyModuleNames` in your
 ## Enabling filtering
 These modifications of `UpdateRenderTarget` and `DrawWidgetToRenderTarget` are enough to enable mipmapping and filtering of the render target.
 However, filtering would only work if the material is set up correctly.
-The default widget material (`Widget3DPassThrough`) uses a shared sampler for the `SlateUI` texture (`Sampler Source` is set to `Shared: Clamp`).
+The default widget material (&#x200B;`Widget3DPassThrough`&#x200B;) uses a shared sampler for the `SlateUI` texture (&#x200B;`Sampler Source` is set to `Shared: Clamp`&#x200B;).
 This would override the filtering settings we set up before, and would use default filtering from `TEXTUREGROUP_World`.
 Unless you want to change the default filtering for the whole project to trilinear / aniso-linear, set the `Sampler Source` to `From texture asset`.
 
