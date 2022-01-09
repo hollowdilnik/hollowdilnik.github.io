@@ -1,14 +1,19 @@
 <div class="site-title"><a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a>
 </div>
-{% if site.logo %}
-  <div class="site-title"><a class="logo" href="{{ "/" | absolute_url }}"></a></div>
-{% endif %}
+<div class="site-title"><a class="logo" href="{{ "/" | absolute_url }}"></a></div>
+<div class="site-title-horizontal">
+  <a class="logo" href="{{ "/" | absolute_url }}"></a>
+  <a href="{{ "/" | absolute_url }}">{{ site.title | default: site.github.repository_name }}</a>
+</div>
 
 <p>We are Dmitry Molchanov and Julia Molchanova. We make VR games focused on intense locomotion.</p>
 
-<ul class="social">
+<ul class="social" id="sidebar-social">
   <li class="twitter"><a href="https://twitter.com/hollowdilnik">@hollowdilnik</a></li>
   <li class="discord"><a href="https://discord.gg/d7gqjtKQm4">Discord server</a></li>
   <li class="itch"><a href="https://hollowdilnik.itch.io">hollowdilnik.itch.io</a></li>
   <li class="youtube"><a href="https://www.youtube.com/channel/UCZLPLWEfKYVd7HmA7GOPM-w"> / Hollowdilnik</a></li>
+</ul>
+<ul class="social-horizontal">
+  <li><a class="twitter" href="https://twitter.com/hollowdilnik"></a></li><li><a class="discord" href="https://discord.gg/d7gqjtKQm4"></a></li><li><a class="itch" href="https://hollowdilnik.itch.io"></a></li><li><a class="youtube" href="https://www.youtube.com/channel/UCZLPLWEfKYVd7HmA7GOPM-w"></a></li>
 </ul>
