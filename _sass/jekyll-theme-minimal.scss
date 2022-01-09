@@ -255,14 +255,16 @@ ul.social {
 ul.social-horizontal {
   display: none;
   padding-left: 0px;
+  margin: 0;
 }
 ul.social-horizontal > li {
   display: inline-block;
   padding: 0px 5px;
+  vertical-align: middle;
 }
 ul.social-horizontal > li a {
-  height: 1.4em;
-  width: 1.4em;
+  height: 1.7em;
+  width: 1.7em;
   display:block;
   background-size: contain;
   background-repeat: no-repeat;
@@ -279,8 +281,8 @@ ul.social-horizontal > li a.itch {
   background-image: url(../img/itch.svg);
 }
 ul.social-horizontal > li a.youtube {
-  height: 1.5em;
-  width: 1.5em;
+  height: 1.9em;
+  width: 1.9em;
   background-position-y: 3px;
   background-image: url(../img/yt.svg);
 }
@@ -353,6 +355,10 @@ hr {
   ul.social {display: none;}
   .site-title {display: none;}
   .site-title-horizontal {display: inline-block;}
+  pre, code {
+    word-wrap:break-word;
+    white-space: normal;
+  }
 
   div.wrapper {
     width:auto;
@@ -364,7 +370,7 @@ hr {
     float:none;
     display:block;
     width:auto;
-    max-width:400px;
+    max-width:560px;
     position:static;
     text-align:center;
     margin-left: auto;
@@ -373,7 +379,6 @@ hr {
   }
 
   section {
-    max-width:400px;
     padding:10px;
     margin-left: auto;
     margin-right: auto;
@@ -397,11 +402,6 @@ hr {
   body {
     word-wrap:break-word;
   }
-
-  pre, code {
-    word-wrap:normal;
-    white-space: normal;
-  }
 }
 
 @media print, screen and (max-width: 1200px) {
@@ -417,9 +417,9 @@ hr {
   body {
     padding:0;
   }
-  header section {width:auto;}
+  header, section {width:auto;}
   section {
-    margin-top: 10px;
+    margin-top: 0px;
   }
 
   .downloads {
