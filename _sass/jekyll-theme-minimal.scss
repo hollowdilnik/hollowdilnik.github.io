@@ -143,6 +143,11 @@ pre {
   overflow-x: auto;
 }
 
+#commento > pre {
+  padding:0px 0px;
+  border-radius:2px;
+}
+
 table {
   width:100%;
   border-collapse:collapse;
