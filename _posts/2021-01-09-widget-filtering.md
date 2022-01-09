@@ -17,6 +17,12 @@ This can be fixed by generating mipmaps and filtering, but enabling it in UE4 is
 
 This note is mostly targeted towards VR and Oculus Quest headsets, but is still relevant to other devices and applications that use `UWidgetComponent`&#x200B;s.
 
+<figure class="video_container">
+  <video controls="true" allowfullscreen="true" poster="/assets/img/mipmaps.jpg">
+    <source src="/assets/video/mipmaps.webm" type="video/webm">
+  </video>
+</figure>
+
 <!-- TODO: GIF THAT SHOWS BEFORE VS AFTER -->
 
 ## Generating mipmaps for UMG widgets
@@ -84,10 +90,6 @@ Even if they are broken, it should be straightforward to do something similar in
 **Blend Mode:** This approach works great with opaque, translucent, additive and AlphaComposite materials.
 However, masked materials do not look great; the opacity mask gets messed up by filtering.
 It might be possible to do some shader magic to make masked materials look good, but it is out of scope of this note.
-
-<!-- TODO: GIFS WITH DIFFERENT FILTERING -->
-
-<!-- TODO: GIFS WITH DIFFERENT BLEND MODES -->
 
 ## Possible extensions
 Not sure if it is worth it, but it might be possible to gain additional performance by limiting the number of mips generated for the render target.
