@@ -10,7 +10,7 @@ title: "Fixing aliasing / flickering widgets in UE4"
 
 > In the widget material, change the `Sampler Source` for `SlateUI` to `From texture asset` or enable trilinear / aniso-linear filtering for `TEXTUREGROUP_World`.
 
-> It is available as a plugin at https://github.com/hollowdilnik/filtered-widget
+> It is available as a plugin at [https://github.com/hollowdilnik/filtered-widget](https://github.com/hollowdilnik/filtered-widget)
 
 [UMG](https://docs.unrealengine.com/4.27/en-US/InteractiveExperiences/UMG/) is great for UI widgets.
 However, `UWidgetComponent`&#x200B;s that display these widgets in the world do not look good, especially in VR.
