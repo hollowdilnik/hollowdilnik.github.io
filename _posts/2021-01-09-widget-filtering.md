@@ -10,6 +10,8 @@ title: "Fixing aliasing / flickering widgets in UE4"
 
 > In the widget material, change the `Sampler Source` for `SlateUI` to `From texture asset` or enable trilinear / aniso-linear filtering for `TEXTUREGROUP_World`.
 
+> If you are in 4.26 with Android Vulkan, disable GENMIPS_SWIZZLE
+
 > It is available as a plugin at [https://github.com/hollowdilnik/filtered-widget](https://github.com/hollowdilnik/filtered-widget)
 
 [UMG](https://docs.unrealengine.com/4.27/en-US/InteractiveExperiences/UMG/) is great for UI widgets.
@@ -92,6 +94,11 @@ Even if they are broken, it should be straightforward to do something similar in
 **Blend Mode:** This approach works great with opaque, translucent, additive and AlphaComposite materials.
 However, masked materials do not look great; the opacity mask gets messed up by filtering.
 It might be possible to do some shader magic to make masked materials look good, but it is out of scope of this note.
+
+**Getting swizzled:** There is a feature in UE 4.26 that generously swaps R and B channels after every step of mipmap generation.
+If this causes problems, replace [this line](https://github.com/EpicGames/UnrealEngine/blob/a47b87395132f0454c285dc6ec488dece4d45c9c/Engine/Shaders/Private/ComputeGenerateMips.usf#L36) in the mipmap generation shader with `MipOutUAV[DT_ID.xy] = outColor;`.
+Apparently it was introduced at some point to counteract R and B channels being swapped by Vulkan, but is no longer needed and, ironically, causes R and B channels to get swapped.
+This got fixed in UE 4.27.
 
 ## Possible extensions
 Not sure if it is worth it, but it might be possible to gain additional performance by limiting the number of mips generated for the render target.
